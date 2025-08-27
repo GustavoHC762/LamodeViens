@@ -1,0 +1,338 @@
+{
+  "info": {
+    "name": "Backend CSR API",
+    "description": "Collection of endpoints for the CSR Backend API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Products",
+      "item": [
+        {
+          "name": "Add Product",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "Producto de ejemplo",
+                  "type": "text"
+                },
+                {
+                  "key": "size",
+                  "value": "M",
+                  "type": "text"
+                },
+                {
+                  "key": "unitaryPrice",
+                  "value": "25000",
+                  "type": "text"
+                },
+                {
+                  "key": "description",
+                  "value": "Descripción del producto",
+                  "type": "text"
+                },
+                {
+                  "key": "categoria",
+                  "value": "Camisetas",
+                  "type": "text"
+                },
+                {
+                  "key": "color",
+                  "value": "Rojo",
+                  "type": "text"
+                },
+                {
+                  "key": "image",
+                  "type": "file",
+                  "src": []
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/v1/products",
+              "host": ["{{baseUrl}}"],
+              "path": ["v1", "products"]
+            }
+          }
+        },
+        {
+          "name": "Get Products",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/v1/products",
+              "host": ["{{baseUrl}}"],
+              "path": ["v1", "products"]
+            }
+          }
+        },
+        {
+          "name": "Delete Product",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/v1/products/delete/:id",
+              "host": ["{{baseUrl}}"],
+              "path": ["v1", "products", "delete", ":id"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "product_id_here"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Edit Product",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "Producto editado",
+                  "type": "text"
+                },
+                {
+                  "key": "size",
+                  "value": "L",
+                  "type": "text"
+                },
+                {
+                  "key": "unitaryPrice",
+                  "value": "30000",
+                  "type": "text"
+                },
+                {
+                  "key": "description",
+                  "value": "Descripción actualizada",
+                  "type": "text"
+                },
+                {
+                  "key": "categoria",
+                  "value": "Camisetas",
+                  "type": "text"
+                },
+                {
+                  "key": "color",
+                  "value": "Rojo",
+                  "type": "text"
+                },
+                {
+                  "key": "image",
+                  "type": "file",
+                  "src": []
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/v1/products/edition/:id",
+              "host": ["{{baseUrl}}"],
+              "path": ["v1", "products", "edition", ":id"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "product_id_here"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Admins",
+      "item": [
+        {
+          "name": "Add Admin",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nameAdmin\": \"admin_name\",\n  \"paswordAdmin\": \"admin_password\",\n  \"emailAdmin\": \"admin@email.com\",\n  \"rolAdmin\": \"superadmin\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/v1/Admins",
+              "host": ["{{baseUrl}}"],
+              "path": ["v1", "Admins"]
+            }
+          }
+        },
+        {
+          "name": "Get Admins",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/v1/Admins",
+              "host": ["{{baseUrl}}"],
+              "path": ["v1", "Admins"]
+            }
+          }
+        },
+        {
+          "name": "Admin Login",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nameAdmin\": \"admin_name\",\n  \"paswordAdmin\": \"admin_password\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/v1/admins/login",
+              "host": ["{{baseUrl}}"],
+              "path": ["v1", "admins", "login"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Clients",
+      "item": [
+        {
+          "name": "Add Client",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nameClient\": \"Juan\",\n  \"surnameClient\": \"Pérez\",\n  \"city\": \"Bogotá\",\n  \"emailClient\": \"juan.perez@email.com\",\n  \"phone\": \"3001234567\",\n  \"address\": \"Calle 123 #45-67\",\n  \"password\": \"client_password\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/v1/Client",
+              "host": ["{{baseUrl}}"],
+              "path": ["v1", "Client"]
+            }
+          }
+        },
+        {
+          "name": "Get Clients",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/v1/Client",
+              "host": ["{{baseUrl}}"],
+              "path": ["v1", "Client"]
+            }
+          }
+        },
+        {
+          "name": "Delete Client",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/v1/Client/delete/:id",
+              "host": ["{{baseUrl}}"],
+              "path": ["v1", "Client", "delete", ":id"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "client_id_here"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Orders",
+      "item": [
+        {
+          "name": "Add Order",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"clientId\": \"client_id_here\",\n  \"productList\": [\n    {\n      \"productId\": \"product_id_here\",\n      \"quantity\": 2,\n      \"price\": 25000\n    },\n    {\n      \"productId\": \"another_product_id\",\n      \"quantity\": 1,\n      \"price\": 30000\n    }\n  ]\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/v1/Order",
+              "host": ["{{baseUrl}}"],
+              "path": ["v1", "Order"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Delivery",
+      "item": [
+        {
+          "name": "Add Product for Delivery",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nameClient\": \"María García\",\n  \"numberContact\": \"3001234567\",\n  \"email\": \"maria.garcia@email.com\",\n  \"address\": \"Carrera 15 #25-30, Bogotá\",\n  \"description\": \"Pedido contra entrega\",\n  \"numberProducts\": 3,\n  \"productsList\": [\n    {\n      \"name\": \"Camiseta Polo\",\n      \"size\": \"M\",\n      \"quantity\": 2,\n      \"price\": 35000\n    },\n    {\n      \"name\": \"Pantalón Jean\",\n      \"size\": \"32\",\n      \"quantity\": 1,\n      \"price\": 80000\n    }\n  ],\n  \"delivery\": {\n    \"deliveryDate\": \"2024-01-15\",\n    \"deliveryTime\": \"14:00\",\n    \"deliveryAddress\": \"Carrera 15 #25-30, Bogotá\"\n  }\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/v1/Delivery",
+              "host": ["{{baseUrl}}"],
+              "path": ["v1", "Delivery"]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000",
+      "type": "string"
+    }
+  ]
+}
