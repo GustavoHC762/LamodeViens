@@ -22,7 +22,7 @@ const Foter = () => {
           </div>
           <div className="animate__animated animate__pulse col-12 col-sm-3 col-lg-3 col-xl-3 col-xxl-3 anmpijam">
             <h1>Desarrollador.</h1>
-            <p>Camilo Solano Rodriguez, Javier Moreno, Gustavo Holguin.</p>
+            <p>Juan Camilo Solano Rodriguez - Desarrollador Principal, Javier Moreno, Gustavo Holguin.</p>
             <p>Redes sociales.</p>
             <div className="redes-soc">
               <Link to="https://wa.link/tp637j"><i className="fab fa-whatsapp cont-redes"></i></Link>

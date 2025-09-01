@@ -9,7 +9,7 @@
     "start": "node server.js"
   },
   "keywords": [],
-  "author": "Javier Moreno-Gustavo Holguin.",
+  "author": "Juan Camilo Solano Rodriguez - Desarrollador Principal, Javier Moreno, Gustavo Holguin.",
   "license": "ISC",
   "dependencies": {
     "@aws-sdk/client-s3": "3.609.0",
